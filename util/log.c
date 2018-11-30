@@ -391,6 +391,15 @@ log_query(const char *format, ...)
 	va_end(args);
 }
 
+void
+log_reply(const char *format, ...)
+{
+	va_list args;
+	va_start(args, format);
+	log_vmsg(LOG_INFO, "reply", format, args);
+	va_end(args);
+}
+
 void log_buf(enum verbosity_value level, const char* msg, sldns_buffer* buf)
 {
 	if(verbosity < level)

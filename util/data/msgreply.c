@@ -861,7 +861,7 @@ log_reply_info(enum verbosity_value v, struct query_info *qinf,
 		pktlen = sldns_buffer_limit(rmsg);
 		sldns_wire2str_type_buf(qinf->qtype, type_buf, sizeof(type_buf));
 		sldns_wire2str_class_buf(qinf->qclass, class_buf, sizeof(class_buf));
-		log_info("%s %s %s %s %s " ARG_LL "d.%6.6d %d %d",
+		log_reply("%s %s %s %s %s " ARG_LL "d.%6.6d %d %d",
 			clientip_buf, qname_buf, type_buf, class_buf,
 			rcode_buf, (long long)dur.tv_sec, (int)dur.tv_usec, cached, (int)pktlen);
 	}
